@@ -26,6 +26,8 @@
     - 最新の構文を使えるようにするために設定する
     - EcmaFeatures の設定なしで jsx の記法を使うことが出来る
       - 理由：外部パッケージの eslint-plugin-react が勝手に jsx の設定を true にしている
+  - settings
+    - package.json の react を見て React のバージョンを決める設定を行う
 
   ```
     // 対話式でESLintの設定を行うことが可能
