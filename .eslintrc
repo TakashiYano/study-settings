@@ -11,13 +11,22 @@
     "sourceType": "module"
   },
   "plugins": [],
-  "extends": ["plugin:react/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+    "prettier"
+  ],
   "rules": {
-    "semi": "error",
-    "quotes": "error",
     "no-undef": "error",
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
