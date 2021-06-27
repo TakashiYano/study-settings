@@ -1,8 +1,23 @@
 {
-  "extends": ["next", "next/core-web-vitals"],
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "plugins": [],
+  "extends": ["plugin:react/recommended"],
   "rules": {
     "semi": "error",
     "quotes": "error",
-    "react/prop-types": "off"
+    "no-undef": "error",
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-props-no-spreading": "off"
   }
 }
