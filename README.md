@@ -59,3 +59,10 @@
       // 設定
       npx mrm@2 lint-staged
     ```
+
+- [json-server](https://github.com/typicode/json-server)(mockAPIを作るときに便利)
+  - 欲しいAPIを素早く定義することが出来る
+  - フィルタリングの処理
+  - ページングの処理
+  - ソートの処理
+  - 比較の処理
