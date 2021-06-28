@@ -34,6 +34,7 @@
     - --ext を使って他の拡張子を認識するようになる
     - fix というオプションを用いると、自動修正することが出来る
     - 今あるプロダクトに ESLint を導入するときに--fix を付けることによって自動修正できるものは全部自動修正してくれる
+  - [@typescript-eslint/naming-convention](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqazBOeFdUOGYtdldfbFAxSEZjTG9yWWxJNXFFQXxBQ3Jtc0tsTTMwWGZ0Zi15SVo5b0Rna1dHZXZpd2JNN3Bvb2o1QUI0RExMY2NtZHBrdGozZHJycUtWa0RGRG5FVUR5R3NjUUdFM2lyTjFyekljbGZ0d1E2aTFkTnFvb2hvT191d2lpelA1UUVTMzlxWVpVcW00UQ&q=https%3A%2F%2Fdev.classmethod.jp%2Farticles%2Fshuntaka9576-check-eslint%2F)
 
   ```
     // 対話式でESLintの設定を行うことが可能
@@ -49,5 +50,12 @@
     - fixを連続的に走らせる(run-s)
       - eslintの修正中にprettierの修正を加えることを防ぐため
     - --continue-on-errorを付けることで出力を変えたりできる
-  - 重要(チーム開発において)
+  - husky & lint-staged
     - スクリプトに lint を登録して、また別のパッケージで husky, lint-staged を組み合わせると、GitHub でコミットしてコードを送る前に yarn lint で検査を行う事によって、検査が通ればコミットできるけど、検査が通らなければエラーを出してコミットできないようにすることが出来る
+    - .huskyディレクトリのpre-commitファイルをgitに上げないように.gitignoreファイルが.huskyディレクトリ内に作成されている
+    - package.json内のscriptsのyarn prepareで.huskyディレクトリを作成するようにしている
+
+    ```
+      // 設定
+      npx mrm@2 lint-staged
+    ```
