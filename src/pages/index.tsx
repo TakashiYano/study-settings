@@ -1,9 +1,22 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import { useCallback, useEffect, useState } from "react";
 import classes from "src/styles/Home.module.css";
 
 const Home: NextPage = () => {
+  const [title, setTitle] = useState("");
+
+  const getPostTitle = useCallback(async () => {
+    const res = await fetch("http://localhost:8080/posts?author=typicode");
+    const json = await res.json();
+    setTitle(json[0].title);
+  }, []);
+
+  useEffect(() => {
+    getPostTitle();
+  }, [getPostTitle]);
+
   return (
     <div className={classes.container}>
       <Head>
@@ -13,9 +26,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={classes.main}>
-        <h1 className={classes.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <h1 className={classes.title}>{title}</h1>
 
         <p className={classes.description}>
           Get started by editing{" "}
