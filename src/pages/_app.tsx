@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import "../styles/globals.css";
+import { AppProps } from "next/app";
+import "src/styles/globals.css";
 
-function MyApp({ Component, pageProps }) {
+const MyApp = ({ Component, pageProps }: AppProps) => {
   const [state] = useState();
 
   useEffect(() => {
@@ -9,6 +10,6 @@ function MyApp({ Component, pageProps }) {
   }, [state]);
 
   return <Component {...pageProps} />;
-}
+};
 
 export default MyApp;
