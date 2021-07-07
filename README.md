@@ -10,6 +10,9 @@
 
 - [Next.js](https://nextjs.org/docs)
 
+- [Vercel](https://nextjs.org/docs/deployment#vercel-recommended)
+  - プラットフォーム
+
 - [ESLint](https://eslint.org/docs/rules/)
 
   - コードの解析を行うツール
