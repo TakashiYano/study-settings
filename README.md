@@ -8,10 +8,14 @@
 
 - [React](https://ja.reactjs.org/docs/getting-started.html)
 
+  - [react-error-boundary](https://github.com/bvaughn/react-error-boundary)
+    - 使用する最も簡単な方法<ErrorBoundary>は、エラーをスローする可能性のあるコンポーネントをラップする.これにより、そのコンポーネントとその子孫によってスローされたエラーも処理される
+
 - [Next.js](https://nextjs.org/docs)
 
 - [Vercel](https://nextjs.org/docs/deployment#vercel-recommended)
   - プラットフォーム
+  - githubのリポジトリと連携して、サイトのデプロイが可能
 
 - [ESLint](https://eslint.org/docs/rules/)
 
