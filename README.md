@@ -15,7 +15,12 @@
 
 - [Vercel](https://nextjs.org/docs/deployment#vercel-recommended)
   - プラットフォーム
-  - githubのリポジトリと連携して、サイトのデプロイが可能
+    - githubのリポジトリと連携して、サイトのデプロイが可能
+  - 独自ドメイン(vercelで購入することも可能)
+    - httpsに標準で対応しているため証明書を発行する必要がない
+    - Googleドメインなどで購入したドメインを用いる際にはAddする
+  - サブドメイン
+    - 大きなサービスを運用する際には費用軽減のためサブドメインを用いる
 
 - [ESLint](https://eslint.org/docs/rules/)
 
