@@ -78,3 +78,8 @@
   - ページングの処理
   - ソートの処理
   - 比較の処理
+
+- [Google Domains](https://domains.google.com/registrar/search?hl=ja)
+  - Gmailをそのまま独自ドメインを反映させて使うことが出来る
+  - Google Domainsで購入したドメインをVercelで使う方法
+    - Google Domainsのカスタムネームサーバーを使用する
