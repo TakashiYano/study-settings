@@ -53,6 +53,13 @@
     - 動的なルートの例(articleId・userIdは可変)
       - article/[articleId]
       - user/[userId]
+  - ISR
+    - SSGのページを更新(再生成)できる→getStaticPropsのrevalidateオプション(number型)を設定するだけで実現可能
+    - 更新の間隔を調整できる
+    - 更新は新しいリクエスト時のみ→余分なリクエストが発生しない
+    - 例
+      - revalidate=5だと最大5秒に1度しか再生成されない
+      - 5秒以上経って、初のリクエスト時に再生成される
 
 - [Vercel](https://nextjs.org/docs/deployment#vercel-recommended)
   - プラットフォーム
