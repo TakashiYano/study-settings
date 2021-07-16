@@ -37,6 +37,22 @@
     - Vercelのアプリケーションサーバーには制限がある
     - タイムアウトの制限
     - 同時実行数の制限
+  - SSG(動的なルート)
+    - getStaticPropsと合わせてgetStaticPathsを使う必要がある
+    - getStaticPathsはfallbackオプションの使い方で挙動が変わる
+    - getStaticPaths
+      - 動的なルートで静的生成(SSG)する際に使用する
+      - articleIdがとりうる値をリストアップする
+    - 静的なルートでSSG：getStaticPropsのみ
+    - 動的なルートでSSG：getStaticProps + getStaticPaths
+    - ビルド時の後にデータソースが増えた場合には、3つのオプションから挙動を選ぶ
+      - fallback:false→指定外のルートは404を返す。データ追加がない場合。
+      - fallback:true→最初のリクエストにはフォールバック。ローディング中に静的生成。
+      - fallback:"blocking"→最初のリクエストはSSRの挙動。静的生成後に表示
+      - ポイント：データの追加があるときは、fallbackはtrueまたは"blocking"
+    - 動的なルートの例(articleId・userIdは可変)
+      - article/[articleId]
+      - user/[userId]
 
 - [Vercel](https://nextjs.org/docs/deployment#vercel-recommended)
   - プラットフォーム
