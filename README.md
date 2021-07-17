@@ -61,6 +61,22 @@
       - revalidate=5だと最大5秒に1度しか再生成されない
       - 5秒以上経って、初のリクエスト時に再生成される
 
+- [Tailwind CSS](https://tailwindcss.com/)
+  - 特徴
+    - ユーティリティファーストCSSフレームワーク→便利なclassを多く用意している
+    - 自分でCSSファイルを作る必要がなく、スタイリングするときはTailwind CSSがあらかじめ用意したclassを当てはめる
+    - パフォーマンスが良い
+      - 本番環境では未使用のclassを削除してくれる
+  - メリット
+    - 命名を考えなくて良い
+    - 微調整で頭を使わなくて良い
+    - レスポンシブ対応(ブレイクポイントの設定)を任せることが出来る
+      - sm：min-widthが640px以上のとき
+      - md：min-widthが768px以上のとき
+      - lgやxlもある
+    - ダークモード対応を簡易的に行うことが出来る
+      - configファイルでdarkmodeの設定を行うことで使用可能
+
 - [Vercel](https://nextjs.org/docs/deployment#vercel-recommended)
   - プラットフォーム
     - githubのリポジトリと連携して、サイトのデプロイが可能
