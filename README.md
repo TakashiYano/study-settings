@@ -39,6 +39,18 @@
   - node_modules内の実行ファイルを毎回指定するのは大変で、チーム開発の際もわかりにくいため、そういったコマンド(タスク)の実行はnpm scriptsに登録して使う
   - buildを実行したい時にタスクランナー(Gulp, Grunt)を使って実現する必要がない
 
+- チーム開発におけるnode_modulesの扱い方
+  - node_modulesを共有しない理由
+    - プロジェクトによってはパッケージが200～300個になることも多々あり、膨大なファイルサイズとなるため
+    - Gitでファイルの管理をしていくことになるが、node_modules内の全てをGitで管理しようとすると、コードの差分がすごいことになってしまう
+  - node_modulesを共有しないための方法
+    - package.jsonとyarn.lockをGitHubにあげて、チームメンバーがインストールし直すという手法を用いる
+    - GitHubから自分のローカル環境にクローンをして、そこで改めてyarnすることでnode_modulesを作る
+    - バージョン管理が指定されているyarn.lockがあれば、各々インストールし直しても同じものがインストールされる
+  - .gitignoreの使い方
+    - git initで.gitという不可視フォルダが作られ、.gitがあるとVS Codeで差分管理が可能になる
+    - .gitignoreに記載されたファイルはソース管理から外れる
+
 - TypeScript
 
 - [React](https://ja.reactjs.org/docs/getting-started.html)
