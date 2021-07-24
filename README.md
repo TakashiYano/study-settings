@@ -4,6 +4,22 @@
 
 - JavaScript
 
+- npm(パッケージ管理システム)
+  - 依存関係を解決できるため、パッケージ管理システムを用いる
+    - 一つ一つ管理していく手間を省き、パッケージ管理をすべて自動化させる
+    - 「Googleがホストしているものをscriptタグで読み込んでいる」方法ではなく、「yarn addを用いてnode_modulesの中にパッケージを入れて呼び出す」方法を用いることが多い
+  - [コマンド](https://qiita.com/rubytomato@github/items/1696530bb9fd59aa28d8)
+    - pwd：現在の階層を確認する
+    - yarn(npm) -v：バージョンを確認する
+    - yarn init -y(対話型がyesでデフォルト)：プロジェクトごとに、パッケージ管理を行うpackage.jsonを作成
+      - npm initは必須だが、yarn initは必須でなく、npmライブラリをローカルにインストールするだけで自動でpackage.jsonを作成してくれる
+  - yarn.lock：パッケージの依存関係を示す
+  - node_modules：パッケージはdistに入れられていることが多い
+  - パッケージのバージョン管理
+    - package.jsonのdependenciesを手動で書き換えてコマンドでyarnを行うか、コマンドでyarn upgrade ～ --latestを用いる
+    - yarn add ～ のみでパッケージのバージョン管理が可能
+    - node_modulesの中のパッケージをバージョン管理している
+
 - TypeScript
 
 - [React](https://ja.reactjs.org/docs/getting-started.html)
