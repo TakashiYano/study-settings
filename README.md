@@ -62,6 +62,24 @@
     - vercelが出しているserve(https://github.com/vercel/serve)：ローカルのサーバーを簡単に立ち上げるもの
       - シングルページアプリケーションを確認したい時やビルドしたものが動くかを確認したいときに用いる
 
+- [Babel](https://babeljs.io/)
+  - JavaScriptのコンパイラで、コンパイラというのはあるプログラムを別のプログラムに変換すること
+  - ブラウザによっては新しい記法が使える・使えないという問題があったりするが、Babelを使うことによってどのブラウザでも動くように変換する
+  - TypeScriptやReact JSXもBabelを通してブラウザで動かすように変換する
+
+- [モジュールバンドラー「webpack」](https://webpack.js.org/)
+  - ReactやNext.jsなどのモダンなWebフレームワークの裏側で必ず動いているツール
+  - モジュール同士の依存関係を解決して1つのJSファイルにまとめたり、CommonJS形式のモジュールをブラウザが動く形に変換できる
+  - SassをCSSに変換する
+  - 画像ファイルを変換してサイズを減らす
+  - 開発環境を立ち上げて便利に開発できるようにする
+  - ホットリローディング
+  - --mode=development：ブラウザの開発ツールが解析しやすいようにバンドルされている
+  - --mode=production：変数が短くなったり、空白や改行が削除されていたりなど最適化されファイルサイズが小さくなっている
+
+- webpack-dev-server(開発体験の向上)
+  - ソース内にあるjsファイルを監視させて、何か変更があった際に自動で更新する
+
 - TypeScript
 
 - [React](https://ja.reactjs.org/docs/getting-started.html)
