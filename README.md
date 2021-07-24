@@ -67,6 +67,12 @@
     - 自分でCSSファイルを作る必要がなく、スタイリングするときはTailwind CSSがあらかじめ用意したclassを当てはめる
     - パフォーマンスが良い
       - 本番環境では未使用のclassを削除してくれる
+    - @applyを用いてclassを一つにまとめることが可能
+      - @applyを多用すると管理が大変になるため注意する
+    - Headless UI
+      - Tailwind CSSと上手く合うように作られたUIコンポーネント
+    - JSフレームワークとの相性
+      - 状態をJavaScript側で管理したいことが多いのに対して、Bootstrapはbootstrap.min.jsの中でJavaScriptがあるため競合してしまうことがある
   - メリット
     - 命名を考えなくて良い
     - 微調整で頭を使わなくて良い
@@ -76,6 +82,20 @@
       - lgやxlもある
     - ダークモード対応を簡易的に行うことが出来る
       - configファイルでdarkmodeの設定を行うことで使用可能
+  - Bootstrap(https://getbootstrap.jp/)との違い
+    - 柔軟性：Tailwind CSSは柔軟性があり、Bootstrapは簡単に書ける(記述量が少ない)
+      - Bootstrapは他の要件やデザインが違う場合に対応するのが難しい
+    - ファイルサイズ：Tailwind CSSはPurgeCSSを用いることによってBootstrapよりパフォーマンスが高くなる
+      - Bootstrap：bootstrap.min.js(81KB)+bootstrap.min.css(153KB)=234KB
+      - Tailwind CSS：71.3KB(PurgeCSSにより10KB以下になる)
+      - PurgeCSS
+        - 未使用のclassを削除してくれるもの
+    - JavaScriptへの依存：Tailwind CSSはJavaScriptへの依存なし、Bootstrapは依存あり
+      - Bootstrap：Accordionコンポーネント、Modalコンポーネント
+      - bootstrap.min.jsには、沢山のJavaScriptの記述が入っているため、無駄なJSも読み込んでしまう
+
+- [Chakra UI](https://chakra-ui.com/docs/getting-started), [Material UI](https://material-ui.com/)
+  - JavaScriptのUIコンポーネントを用いた方が表現力が高いため、Bootstrapより利用される機会が多い
 
 - [Vercel](https://nextjs.org/docs/deployment#vercel-recommended)
   - プラットフォーム
