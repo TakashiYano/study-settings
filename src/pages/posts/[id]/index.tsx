@@ -1,22 +1,30 @@
 import type { NextPage } from "next";
+import { useRouter } from "next/dist/client/router";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import classes from "src/styles/Home.module.css";
 
-const Home: NextPage = () => {
-  const [posts, setPosts] = useState([]);
+type State = {
+  id: string;
+  title: string;
+  author: string;
+};
 
-  const getPosts = useCallback(async () => {
-    const res = await fetch("http://localhost:8080/posts");
+const PostsId: NextPage = () => {
+  const router = useRouter();
+  const [post, setPost] = useState<State>();
+
+  const getPost = useCallback(async () => {
+    const res = await fetch(`http://localhost:8080/posts/${router.query.id}`);
     const json = await res.json();
-    setPosts(json);
-  }, []);
+    setPost(json);
+  }, [router.query.id]);
 
   useEffect(() => {
-    getPosts();
-  }, [getPosts]);
+    getPost();
+  }, [getPost]);
 
   return (
     <div className={classes.container}>
@@ -27,25 +35,12 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={classes.main}>
-        <h1 className={classes.title}>Next.js!</h1>
+        <Link href="/">
+          <a>戻る</a>
+        </Link>
+        <h1 className={classes.title}>{post?.author}</h1>
 
-        <p className={classes.description}>
-          Get started by editing{" "}
-          <code className={classes.code}>pages/index.js</code>
-        </p>
-
-        <div className={classes.grid}>
-          {posts.map(({ id, title, author }) => {
-            return (
-              <Link key={id} href={`/posts/${id}`}>
-                <a className={classes.card}>
-                  <h2>{author}</h2>
-                  <p>{title}</p>
-                </a>
-              </Link>
-            );
-          })}
-        </div>
+        <p className={classes.description}>{post?.title}</p>
       </main>
 
       <footer className={classes.footer}>
@@ -64,4 +59,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default PostsId;
