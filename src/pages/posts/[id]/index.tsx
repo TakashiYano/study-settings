@@ -1,31 +1,27 @@
-import type { NextPage } from "next";
-import { useRouter } from "next/dist/client/router";
+import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useEffect, useState } from "react";
 import classes from "src/styles/Home.module.css";
 
-type State = {
+export type Post = {
   id: string;
   title: string;
   author: string;
 };
 
-const PostsId: NextPage = () => {
-  const router = useRouter();
-  const [post, setPost] = useState<State>();
+// コンポーネントで受け取るpropsのデータ型定義
+export type PostIdProps = {
+  post: Post;
+};
 
-  const getPost = useCallback(async () => {
-    const res = await fetch(`http://localhost:8080/posts/${router.query.id}`);
-    const json = await res.json();
-    setPost(json);
-  }, [router.query.id]);
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const res = await fetch(`http://localhost:8080/posts/${ctx.params?.id}`);
+  const post = await res.json();
+  return { props: { post } };
+};
 
-  useEffect(() => {
-    getPost();
-  }, [getPost]);
-
+const PostsId: NextPage<PostIdProps> = (props) => {
   return (
     <div className={classes.container}>
       <Head>
@@ -38,9 +34,9 @@ const PostsId: NextPage = () => {
         <Link href="/">
           <a>戻る</a>
         </Link>
-        <h1 className={classes.title}>{post?.author}</h1>
+        <h1 className={classes.title}>{props.post?.author}</h1>
 
-        <p className={classes.description}>{post?.title}</p>
+        <p className={classes.description}>{props.post?.title}</p>
       </main>
 
       <footer className={classes.footer}>
