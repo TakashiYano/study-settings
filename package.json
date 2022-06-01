@@ -1,17 +1,17 @@
 {
   "name": "study-settings",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "run-p -c lint:*",
-    "lint:eslint": "eslint --ext .jsx,.js .",
-    "lint:prettier": "prettier -c .",
-    "fix": "run-s -c fix:eslint fix:prettier",
-    "fix:eslint": "eslint --ext .jsx,.js . --fix",
-    "fix:prettier": "prettier -w .",
+    "lint": "run-p -l -c --aggregate-output lint:*",
+    "lint:eslint": "next lint",
+    "lint:prettier": "prettier --check .",
+    "fix": "run-s -l -c fix:eslint fix:prettier",
+    "fix:eslint": "next lint --fix",
+    "fix:prettier": "prettier --write .",
     "json-server": "json-server --watch db.json --port 8080",
     "prepare": "husky install"
   },
@@ -29,7 +29,6 @@
     "eslint-config-next": "12.1.6",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-import": "2.26.0",
-    "eslint-plugin-jsx-a11y": "6.5.1",
     "eslint-plugin-react": "7.30.0",
     "eslint-plugin-react-hooks": "4.5.0",
     "eslint-plugin-simple-import-sort": "7.0.0",
@@ -41,7 +40,12 @@
     "typescript": "4.7.2"
   },
   "lint-staged": {
-    "*.{ts,tsx}": "yarn fix:eslint",
-    "*": "yarn fix:prettier"
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix .",
+      "prettier --write ."
+    ],
+    "**/*.{json,md,css,html}": [
+      "prettier --write ."
+    ]
   }
 }
