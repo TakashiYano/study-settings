@@ -21,7 +21,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   return { props: { post } };
 };
 
-const PostsId: NextPage<PostIdProps> = (props) => {
+const PostsId: NextPage<PostIdProps> = ({ post }) => {
   return (
     <div className={classes.container}>
       <Head>
@@ -34,9 +34,9 @@ const PostsId: NextPage<PostIdProps> = (props) => {
         <Link href="/">
           <a>戻る</a>
         </Link>
-        <h1 className={classes.title}>{props.post?.author}</h1>
+        <h1 className={classes.title}>{post?.author}</h1>
 
-        <p className={classes.description}>{props.post?.title}</p>
+        <p className={classes.description}>{post?.title}</p>
       </main>
 
       <footer className={classes.footer}>
