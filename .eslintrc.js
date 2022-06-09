@@ -1,9 +1,7 @@
 module.exports = {
   root: true,
   parser: "@typescript-eslint/parser",
-  parserOptions: {
-    project: "./tsconfig.json",
-  },
+  parserOptions: { project: "./tsconfig.json" },
   plugins: ["simple-import-sort"],
   extends: [
     "plugin:@typescript-eslint/recommended",
