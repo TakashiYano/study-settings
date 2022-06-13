@@ -3,14 +3,14 @@ import "src/styles/globals.css";
 import type { AppProps } from "next/app";
 import { useEffect, useState } from "react";
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
+const MyApp = (props: AppProps) => {
   const [state] = useState();
 
   useEffect(() => {
     if (state) return;
   }, [state]);
 
-  return <Component {...pageProps} />;
+  return <props.Component {...props.pageProps} />;
 };
 
 export default MyApp;
