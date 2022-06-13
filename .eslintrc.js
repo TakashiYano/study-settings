@@ -28,17 +28,21 @@ module.exports = {
     ],
 
     // react
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
     "react/display-name": "error",
     "react/jsx-handler-names": [
       "error",
       {
         eventHandlerPrefix: "handle",
         eventHandlerPropPrefix: "on",
-        checkLocalVariables: false,
+        checkLocalVariables: true,
         checkInlineFunction: true,
       },
     ],
-    "react/destructuring-assignment": ["error", "always"],
+    "react/destructuring-assignment": ["error", "never"],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
 
     // sort
     "import/newline-after-import": "error",
@@ -60,13 +64,8 @@ module.exports = {
     ],
     "@typescript-eslint/naming-convention": [
       "error",
-      { selector: ["typeLike"], format: ["PascalCase"] },
-      { selector: ["function", "method"], format: ["camelCase"] },
-      {
-        selector: ["variable", "parameter"],
-        types: ["boolean", "string", "number", "array"],
-        format: ["camelCase"],
-      },
+      { selector: ["typeAlias", "typeParameter"], format: ["PascalCase"] },
+      { selector: ["property", "method"], format: ["camelCase"] },
       {
         selector: "variable",
         types: ["boolean"],
