@@ -9,11 +9,17 @@
   - [モジュールバンドラー「webpack」](https://webpack.js.org/)
 - TypeScript
 - [React](https://ja.reactjs.org/docs/getting-started.html)
-- [Next.js](https://nextjs.org/docs)：React フレームワーク
+- [Next.js](https://nextjs.org/docs)
+  - React フレームワーク
 - [Tailwind CSS](https://tailwindcss.com/)
-- [Chakra UI](https://chakra-ui.com/docs/getting-started), [Material UI](https://material-ui.com/)：JavaScript の UI コンポーネントを用いた方が表現力が高いため、Bootstrap より利用される機会が多い
-- [Vercel](https://nextjs.org/docs/deployment#vercel-recommended)：プラットフォーム
-- [ESLint](https://eslint.org/docs/rules/)：コードの解析を行うツール
-- Prettier：コードの整形を行うツール
-- [json-server](https://github.com/typicode/json-server)：mockAPI を作るときに便利
+- [Chakra UI](https://chakra-ui.com/docs/getting-started), [Material UI](https://material-ui.com/)
+  - JavaScript の UI コンポーネントを用いた方が表現力が高いため、Bootstrap より利用される機会が多い
+- [Vercel](https://nextjs.org/docs/deployment#vercel-recommended)
+  - プラットフォーム
+- [ESLint](https://eslint.org/docs/rules/)
+  - コードの解析を行うツール
+- Prettier
+  - コードの整形を行うツール
+- [json-server](https://github.com/typicode/json-server)
+  - mockAPI を作るときに便利
 - [Google Domains](https://domains.google.com/registrar/search?hl=ja)
