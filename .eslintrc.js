@@ -88,7 +88,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["src/pages/**/*.tsx", "src/pages/api/**/*.ts"],
+      files: ["src/pages/**/*.tsx", "src/pages/api/**/*.ts", "next.config.mjs"],
       rules: { "import/no-default-export": "off" },
     },
   ],
