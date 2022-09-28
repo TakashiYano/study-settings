@@ -3,7 +3,12 @@ module.exports = {
   parser: "@typescript-eslint/parser",
   parserOptions: { project: "./tsconfig.json" },
   env: { es2021: true, browser: true, jest: true, node: true },
-  plugins: ["simple-import-sort", "sort-keys-custom-order", "import"],
+  plugins: [
+    "simple-import-sort",
+    "sort-keys-custom-order",
+    "import",
+    "unused-imports",
+  ],
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
@@ -26,6 +31,7 @@ module.exports = {
       "error",
       { paths: [{ name: "react", importNames: ["default"] }] },
     ],
+    "unused-imports/no-unused-imports": "error",
 
     // react
     "react/prop-types": "off",
