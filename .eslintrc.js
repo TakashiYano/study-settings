@@ -3,7 +3,7 @@ module.exports = {
   parser: "@typescript-eslint/parser",
   parserOptions: { project: "./tsconfig.json" },
   env: { es2021: true, browser: true, jest: true, node: true },
-  plugins: ["simple-import-sort", "sort-keys-custom-order"],
+  plugins: ["simple-import-sort", "sort-keys-custom-order", "import"],
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
