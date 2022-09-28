@@ -3,7 +3,7 @@ module.exports = {
   parser: "@typescript-eslint/parser",
   parserOptions: { project: "./tsconfig.json" },
   env: { es2021: true, browser: true, jest: true, node: true },
-  plugins: ["simple-import-sort"],
+  plugins: ["simple-import-sort", "sort-keys-custom-order"],
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
@@ -25,6 +25,16 @@ module.exports = {
     "no-restricted-imports": [
       "error",
       { paths: [{ name: "react", importNames: ["default"] }] },
+    ],
+    // For JS objects sorting
+    "sort-keys-custom-order/object-keys": [
+      "error",
+      { orderedKeys: ["id", "name", "title"] },
+    ],
+    // For TS types sorting
+    "sort-keys-custom-order/type-keys": [
+      "error",
+      { orderedKeys: ["id", "name", "title"] },
     ],
 
     // react
