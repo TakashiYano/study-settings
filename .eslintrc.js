@@ -26,16 +26,6 @@ module.exports = {
       "error",
       { paths: [{ name: "react", importNames: ["default"] }] },
     ],
-    // For JS objects sorting
-    "sort-keys-custom-order/object-keys": [
-      "error",
-      { orderedKeys: ["id", "name", "title"] },
-    ],
-    // For TS types sorting
-    "sort-keys-custom-order/type-keys": [
-      "error",
-      { orderedKeys: ["id", "name", "title"] },
-    ],
 
     // react
     "react/prop-types": "off",
@@ -59,6 +49,14 @@ module.exports = {
     "import/no-default-export": "error",
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
+    "sort-keys-custom-order/object-keys": [
+      "error",
+      { orderedKeys: ["id", "name", "title"] },
+    ],
+    "sort-keys-custom-order/type-keys": [
+      "error",
+      { orderedKeys: ["id", "name", "title"] },
+    ],
 
     // @typescript-eslint
     "@typescript-eslint/no-explicit-any": "off",
