@@ -37,7 +37,7 @@ const Home: NextPage = () => {
         <div className={classes.grid}>
           {posts.map(({ id, title, author }) => {
             return (
-              <Link key={id} href={`/posts/${id}`}>
+              <Link key={id} href={`/posts/${id}`} legacyBehavior>
                 <a className={classes.card}>
                   <h2>{author}</h2>
                   <p>{title}</p>

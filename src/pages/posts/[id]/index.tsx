@@ -31,7 +31,7 @@ const PostsId: NextPage<PostIdProps> = (props) => {
       </Head>
 
       <main className={classes.main}>
-        <Link href="/">
+        <Link href="/" legacyBehavior>
           <a>戻る</a>
         </Link>
         <h1 className={classes.title}>{props.post?.author}</h1>
